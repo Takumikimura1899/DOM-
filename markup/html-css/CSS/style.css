@@ -1,4 +1,6 @@
+/* /////////////////////////// */
 /*全体のスタイル（CSSリセット用）*/
+/* /////////////////////////// */
 *{
     /* padding,borderが要素の中に入る */
     box-sizing:border-box;
@@ -25,4 +27,148 @@ body{
     color:#555;
     margin:0;
     line-height:1.6;
+}
+
+.first-v-btn {
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    font-weight: bold;
+    /* 枠線を消す */
+    border: none;
+    /* 要素の枠を丸くする */
+    border-radius: 5px;
+    /* -90degで左から右にグラデーションする */
+    background: linear-gradient(-90deg,#283C86,#06BEB6);
+    /* 要素に影をつける */
+    box-shadow: 0px 5px #070707;
+    font-weight: bold;
+    font-size: 15px;
+    color: #fff;
+}
+
+/* ///////////////// */
+/* header のスタイル */
+/* //////////////// */
+header{
+    width: 100%;
+    /* 子要素を横並びに */
+    display: flex;
+    /* 子要素を親要素の両端へ */
+    justify-content: space-between;
+    padding: 0 20px;
+    color: #fff;
+    /* 背景色をblackにしてきれいに表示されていたらblackをinhermitに変更 */
+    background-color: inherit;
+    /* first-viewに合わせる */
+    position: absolute;
+    /* headerが一番上に来るようにする */
+    z-index:10;
+}
+
+.header-logo {
+    padding: 20px 0;
+    /* 一般的な太字の太さ */
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.header-nav ul{
+    /* 子要素を横並びに */
+    display: flex;
+    padding: 22px 0;
+}
+
+.header-nav li{
+    /* li要素同士の余白 */
+    margin-left: 55px;
+    font-size: 15px;
+}
+
+/* ///////////////// */
+/* first-viewのスタイル */
+/* //////////////// */
+#first-v{
+    height: 770px;
+    background-image: url(../img/bg1.png);
+    /* 画面全体に画像が表示されるように */
+    background-size: cover;
+    color: #fff;
+    position: relative;
+}
+
+.first-v-wrap{
+    padding: 285px 0 255px;
+    /* ブロック要素を中央揃え */
+    margin: 0 auto;
+    width: 250px;
+    text-align: center;
+}
+
+.first-v-title{
+    margin-bottom: 150px;
+    font-weight: bold;
+    font-size: 27px;
+}
+
+/* ::afterで擬似要素を作成できる */
+.first-v-title::after {
+    /* 擬似要素は元々inline要素なのでblock要素にしないと横幅や余白が調整できない */
+    display: block;
+    /* contentは要素の直前または直後に文字列や画像を挿入するときに使う */
+    content:"";
+    width: 100px;
+    margin: 20px auto 0;
+    /* 線を作る */
+    border-top: 1px solid #fff;
+}
+
+.fa-door-open {
+    padding-right: 4px;
+}
+
+/* ///////////////// */
+/* entryのスタイル */
+/* //////////////// */
+#entry {
+    background-color: #fff;
+}
+
+.entry-wrap {
+    padding: 175px 0;
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.entry-title {
+    margin-bottom: 55px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #191919;
+}
+
+.entry-btn {
+    width: 320px;
+}
+
+
+
+
+/* ///////////////// */
+/* footerのスタイル */
+/* //////////////// */
+footer{
+    background-color: #191919;
+    height: 50px;
+}
+
+.conpany-info{
+    /* 文字を中央寄せ */
+    text-align: center;
+    /* 背景と高さを合わせてセンターにする */
+    line-height: 50px;
+    font-weight: bold;
+    font-size: 12px;
+    color: #fff;
 }

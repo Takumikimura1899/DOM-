@@ -6,15 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/style.css">
     <!-- font-Awesomeを読み込むリンク -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/f9556e2abb.js" crossorigin="anonymous"></script>
     <title>HTML/CSS</title>
 </head>
 <body>
     <!-- header section -->
     <header>
-        <div class="header-logo">
-            <h1>codevillage</h1>
-        </div>
+        <div class="header-logo">Codevillage</div>
         <nav class="header-nav">
             <ul>
                 <li>TOP</li>
@@ -36,11 +34,116 @@
             </section>   
 
         <!-- about section -->
+        <!-- about sectionの大本を作る -->
         <section id="about">
+            <!-- about sectionの中にinnerという箱を作る -->
+            <!-- innerは画面サイズが変わっても中央に表示させるためのものでabout・newsセクションのように複数の子要素をまとめる場合に使用する -->
+            <div class="inner">
+                <!-- innerの箱の中にtitleとabout-wrapの箱を作る -->
+                <div class="title">
+                    <!-- &nbspはノーブレークスペース　改行なしのスペースとして使う -->
+                    <span class="title-b">About&nbsp;</span>US
+                </div>
+                <div class="about-wrap">
+                    <!-- about-wrapの中に6つの箱を作る -->
+                    <div class="about-item">
+                        <div class="about-title_title">時間無制限</div>
+                        <div class="about-item_img">
+                            <img src="./img/icon1.png" alt="">
+                        </div>
+                        <p class="about-item_desc">テキストが入ります。テキストが入ります。テキストが入ります。</p>
+                    </div>
+                    <div class="about-item">
+                        <div class="about-title_title">成長率No.1</div>
+                        <div class="about-item_img">
+                            <img src="./img/icon2.png" alt="">
+                        </div>
+                        <p class="about-item_desc">テキストが入ります。テキストが入ります。テキストが入ります。</p>
+                    </div>
+                    <div class="about-item">
+                        <div class="about-title_title">満足度No.1</div>
+                        <div class="about-item_img">
+                            <img src="./img/icon3.png" alt="">
+                        </div>
+                        <p class="about-item_desc">テキストが入ります。テキストが入ります。テキストが入ります。</p>
+                    </div>
+                    <div class="about-item">
+                        <div class="about-title_title">スマホで学べる</div>
+                        <div class="about-item_img">
+                            <img src="./img/icon4.png" alt="">
+                        </div>
+                        <p class="about-item_desc">テキストが入ります。テキストが入ります。テキストが入ります。</p>
+                    </div>
+                    <div class="about-item">
+                        <div class="about-title_title">トレーナー制度</div>
+                        <div class="about-item_img">
+                            <img src="./img/icon5.png" alt="">
+                        </div>
+                        <p class="about-item_desc">テキストが入ります。テキストが入ります。テキストが入ります。</p>
+                    </div>
+                    <div class="about-item">
+                        <div class="about-title_title">質問し放題</div>
+                        <div class="about-item_img">
+                            <img src="./img/icon6.png" alt="">
+                        </div>
+                        <p class="about-item_desc">テキストが入ります。テキストが入ります。テキストが入ります。</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- news section -->
+
+        <!-- news sectionの大本 -->
         <section id="news">
+            <!-- 中のinner -->
+            <div class="inner">
+                <!-- 共通で使用するtitle -->
+                <div class="title white-title">
+                    <!-- 共通で使用するtitle-b -->
+                    <span class="title-b">News</span>
+                </div>
+                <!-- news-wrapの箱 -->
+                <div class="news-wrap">
+                    <!-- news-itemの箱　３つ作成する -->
+                    <div class="news-item">
+                        <!-- news-img1の箱 -->
+                        <div class="news-img">
+                            <img src="./img/news1.jpg" alt="">
+                        </div>
+                        <!-- news-contentの箱 -->
+                        <div class="news-content">
+                            <p class="news-date">2019/07/21</p>
+                            <p class="news-title">タイトルが入ります。タイトルが入ります。</p>
+                            <p class="news-txt">テキストが入ります。テキストが入ります。テキストが入ります。</p>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <!-- news-img2の箱 -->
+                        <div class="news-img">
+                            <img src="./img/news2.jpg" alt="">
+                        </div>
+                        <!-- news-contentの箱 -->
+                        <div class="news-content">
+                            <p class="news-date">2019/07/21</p>
+                            <p class="news-title">タイトルが入ります。タイトルが入ります。</p>
+                            <p class="news-txt">テキストが入ります。テキストが入ります。テキストが入ります。</p>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <!-- news-img3の箱 -->
+                        <div class="news-img">
+                            <img src="./img/news3.jpg" alt="">
+                        </div>
+                        <!-- news-contentの箱 -->
+                        <div class="news-content">
+                            <p class="news-date">2019/07/21</p>
+                            <p class="news-title">タイトルが入ります。タイトルが入ります。</p>
+                            <p class="news-txt">テキストが入ります。テキストが入ります。テキストが入ります。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- entry section -->
@@ -53,6 +156,37 @@
 
         <!-- contact section -->
         <section id="contact">
+            <div class="inner">
+                <h2 class="title">
+                    <span class="title-b">Contact</span>
+                </h2>
+                <div class="contact-wrap">
+                    <p class="contact-caution"><span class="red">*</span>がついたフィールドは必須項目です。</p>
+                    <div class="contact-box">
+                        <p class="contact-text">お名前<span class="red">*</span></p>
+                        <input type="text" name="contact-name" placeholder="名前をご記入下さい。">
+                    </div>
+                    <!-- <p class="contact-caution"><span class="red">*</span>がついたフィールドは必須項目です。</p> -->
+                    <div class="contact-box">
+                        <p class="contact-text">メールアドレス<span class="red">*</span></p>
+                        <input type="e-mail" name="contact-mail" placeholder="メールアドレスをご記入下さい。">
+                    </div>
+                    <!-- <p class="contact-caution"><span class="red caution-red">*</span>がついたフィールドは必須項目です。</p> -->
+                    <div class="contact-box">
+                        <p class="contact-text"placeholder="お問い合わせ内容を選択">お問い合わせ内容<span class="red">*</span></p>
+                        <!-- セレクトボックス -->
+                        <select name="contact-select" id="" class="select-box">
+                            <option value="service">サービスに関するお問い合わせ</option>
+                            <option value="recruit">採用に関するお問い合わせ</option>
+                            <option value="other">その他のお問い合わせ</option>
+                        </select>
+                    </div>
+                    <div class="contact-box">
+                        <div class="contact-text">お問い合わせ詳細<span class="red">*</span></div>
+                        <textarea name="contact-text" placeholder="お問い合わせ内容の詳細をご記入下さい。" id="" cols="30" rows="10"></textarea>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 

@@ -29,23 +29,41 @@ body{
     line-height:1.6;
 }
 
-.first-v-btn {
-    width: 200px;
-    height: 50px;
-    text-align: center;
-    font-weight: bold;
-    /* 枠線を消す */
-    border: none;
-    /* 要素の枠を丸くする */
-    border-radius: 5px;
-    /* -90degで左から右にグラデーションする */
-    background: linear-gradient(-90deg,#283C86,#06BEB6);
-    /* 要素に影をつける */
-    box-shadow: 0px 5px #070707;
-    font-weight: bold;
-    font-size: 15px;
-    color: #fff;
+/* ///////////////// */
+/* aboutとnewsの共通スタイル */
+/* //////////////// */
+
+.inner {
+    /* about-itemの横幅と間隔の合計 */
+    width: 1100px;
+    /* titleまでの幅 */
+    padding: 90px 0;
+    /* innerが画面の中央に */
+    margin: 0 auto;
 }
+
+.title {
+    /* 擬似要素とtitleを横並びに */
+    display: flex;
+    padding-bottom: 60px;
+
+    /*↓ flex-box内の配置に関するプロパティ↓ */
+    /* 要素全体を横方向に中央揃え */
+    justify-content: center;
+    /* 要素全体を横方向に中央揃え */
+    align-items: center;
+    /*↑ flex-box内の配置に関するプロパティ↑ */
+
+    font-size: 18px;
+    font-style: italic;
+    text-align: center;
+}
+
+.title-b {
+    font-weight: bold;
+}
+
+
 
 /* ///////////////// */
 /* header のスタイル */
@@ -79,11 +97,32 @@ header{
     padding: 22px 0;
 }
 
-.header-nav li{
+.header-nav ul li{
     /* li要素同士の余白 */
     margin-left: 55px;
     font-size: 15px;
 }
+
+.first-v-btn {
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    font-weight: bold;
+    /* 枠線を消す */
+    border: none;
+    /* 要素の枠を丸くする */
+    border-radius: 5px;
+    /* -90degで左から右にグラデーションする */
+    background: linear-gradient(-90deg,#283C86,#06BEB6);
+    /* 要素に影をつける */
+    box-shadow: 0px 5px #070707;
+    font-weight: bold;
+    font-size: 15px;
+    color: #fff;
+}
+
+
+
 
 /* ///////////////// */
 /* first-viewのスタイル */
@@ -121,10 +160,181 @@ header{
     margin: 20px auto 0;
     /* 線を作る */
     border-top: 1px solid #fff;
+    margin: 20px auto 0;
+}
+
+.first-v-btn {
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    font-weight: bold;
+    /* 枠線を消す */
+    border: none;
+    /* 要素の枠を丸くする */
+    border-radius: 5px;
+    /* -90degで左から右にグラデーションする */
+    background: linear-gradient(-90deg,#283C86,#06BEB6);
+    /* 要素に影をつける */
+    box-shadow: 0px 5px #070707;
+    font-weight: bold;
+    font-size: 15px;
+    color: #fff;
 }
 
 .fa-door-open {
     padding-right: 4px;
+}
+
+
+
+
+
+/* ///////////////// */
+/* aboutのスタイル */
+/* //////////////// */
+
+#about {
+    color: #191919;
+    background-color: #f8f8f8;
+}
+
+.title::before {
+    content:"";
+    /* 擬似要素には必ずつける(横並びかつ横幅を指定するため) */
+    display: inline-block;
+    width: 30px;
+    margin-right: 20px;
+    border-top: 1px solid #191919;
+}
+
+.title::after {
+    content:"";
+    /* 擬似要素には必ずつける(横並びかつ横幅を指定するため) */
+    display: inline-block;
+    width: 30px;
+    margin-left: 20px;
+    border-top: 1px solid #191919;
+}
+
+.about-wrap {
+    
+    display: flex;
+    /* 要素を均等分け　教材に乗ってません */
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+
+.about-item {
+    width: 300px;
+    height: 315px;
+    padding: 35px 50px 50px;
+    text-align: center;
+    background-color: #fff;
+    /* 教材のサンプルコード */
+    /* margin-right: 100px; */
+}
+
+/* 教材のサンプルコード 
+.about-item:nth-child(３):nth-child(6){ 
+     margin-right: 0; 
+} */
+
+/* 擬似要素nth-childを用いて要素選択をする */
+/* 関数を用いる 意味は(n+4)は0+4,1+4;2+4 4,5,6  (-n+6)は-0+6,-1+6,-2+6 6,5,4 */
+.about-item:nth-child(n+4):nth-child(-n+6){
+    /* 4~6個目のabout-itemにmargin-topをつける */
+    margin-top: 47px;
+}
+
+.about-title_title {
+    font-size: 22px;
+}
+
+.about-item-img {
+    width: 122px;
+    height: 122px;
+    margin: 20px 0 25px;
+}
+/*サンプルコード
+.about-item_img img{
+    width: 100%;
+}*/
+
+.about-item_desc {
+    font-size: 13px;
+}
+
+/* ///////////////// */
+/* newsのスタイル */
+/* //////////////// */
+
+#news {
+    width: 100%;
+    background-image: url(/img/bg2.png);
+    background-size: cover;
+}
+
+.news-wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.white-title {
+    width: 150px;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.white-title::before{
+    content:"";
+    width: 30px;
+    margin-right: 20px;
+    border-top: 1px solid #fff;
+}
+
+.white-title::after{
+    content:"";
+    width: 30px;
+    margin-left: 20px;
+    border-top: 1px solid #fff;
+}
+
+
+.news-item {
+    width: 336px;
+    margin-top: 60px;
+    background-color: #fff;
+    color: #191919;
+}
+
+.news-img {
+    height: 207px;
+    width: 100%;
+}
+
+.news-img img{
+    width: 100%;
+    height: 100%;
+}
+
+.news-content {
+    padding: 20px;
+}
+
+.news-date {
+    font-weight: bold;
+    font-size: 10px;
+}
+
+.news-title {
+    font-weight: bold;
+    font-size: 14px;
+    padding: 8px 0 20px;
+}
+
+.news-txt {
+    font-size: 12px;
 }
 
 /* ///////////////// */
@@ -153,6 +363,95 @@ header{
 }
 
 
+
+/* ///////////////// */
+/* contactのスタイル */
+/* //////////////// */
+
+#contact {
+    background-image: url(/img/bg3.png);
+    background-size: cover;
+    color: #fff;
+}
+
+
+/* titleクラスとその擬似要素の色を変える */
+/* #contact .title::before, #contact .title::after {
+    border-color: #fff;
+} */
+
+.contact-wrap {
+    width: 600px;
+    margin: 0 auto;
+}
+
+input,textarea,select{
+    width: 100%;
+    border-radius: 7px;
+    padding: 15px;
+}
+
+input,select{
+    height: 55px;
+}
+
+textarea{
+    height: 185px;
+}
+
+select{
+    /* デフォルトでついている矢印アイコンを消す */
+    appearance: none;
+}
+
+.contact-box:nth-of-type(3){
+    position: relative;
+}
+.contact-box:nth-of-type(3)::after{
+    position: absolute;
+    background-image: url(../img/arrow.png);
+    background-size: 100%;
+    display: block;
+    content:"";
+    width: 15px;
+    height: 15px;
+    top: 60%;
+    right: 15px;
+}
+
+
+
+.contact-caution {
+    margin-top: 60px;
+    margin-bottom: 25px;
+    font-size: 15px;
+}
+
+.contact-box{
+    margin-bottom: 33px;
+}
+
+.contact-text {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+
+
+.contact-box:nth-of-type(4){
+    margin-bottom: 0px;
+}
+
+
+.red{
+    color: red;
+    margin-left: 8px;
+}
+
+.caution-red{
+    margin-left: 0;
+    margin-right: 8px;
+}
 
 
 /* ///////////////// */

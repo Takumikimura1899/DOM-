@@ -1,0 +1,45 @@
+#access{
+    height: 757px;
+    width: 1260px;
+    background-color: #A193861F;
+    padding-top: 260px;
+}
+.access-title{
+    margin-left: 107px;
+}
+.access-inner{
+    background-color: #D0C5BA;
+    height: 396px;
+    padding-left: 107px;
+}
+
+.access-wrap{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.adress{
+    padding-top: 101px;
+}
+.adress-title{
+    font-size: 24px;
+    color: #00000038;
+}
+
+.adress-txt ul{
+    padding-top: 30px;
+    font-size: 16px;
+    color: #fff;
+    li{
+    margin-bottom: 24px;
+    }
+}
+
+.map{
+    width: 775px;
+    iframe{
+    height: 100%;
+    width: 100%;
+    }
+}

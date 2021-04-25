@@ -376,9 +376,9 @@ header{
 
 
 /* titleクラスとその擬似要素の色を変える */
-/* #contact .title::before, #contact .title::after {
+#contact .title::before, #contact .title::after {
     border-color: #fff;
-} */
+}
 
 .contact-wrap {
     width: 600px;
@@ -431,17 +431,14 @@ select{
     margin-bottom: 33px;
 }
 
-.contact-text {
-    margin-bottom: 10px;
-    font-size: 15px;
-}
-
-
-
 .contact-box:nth-of-type(4){
     margin-bottom: 0px;
 }
 
+.contact-text {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
 
 .red{
     color: red;

@@ -1,0 +1,24 @@
+header{
+    // width: 100%;
+    display: flex;
+    justify-content: start;
+    // position: absolute;
+    padding-top: 68px;
+    padding-left: 77px;
+    z-index: 20;
+    .header-logo{
+        font-size: 38px;
+    }
+    nav{
+        width: 30%;
+        font-size: 18px;
+        margin-left: 20px;
+        margin-top: 10px;
+        ul{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none;
+        }
+    }
+}

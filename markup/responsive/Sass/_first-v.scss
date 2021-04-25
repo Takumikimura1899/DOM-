@@ -1,0 +1,69 @@
+#first-v{
+    background-image: url(../img/bg1.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    // 位置の基準決め
+    position: relative;
+}
+
+.first-v__wrap{
+    width: 250px;
+    height: 230px;
+    // 横並びにして
+    display: flex;
+    // 両端に等間隔で寄せて
+    justify-content: space-between;
+    // 再度縦並びにすることで上下寄せになる
+    flex-direction: column;
+    // 中央揃えにするalign-itemsはflexアイテムを指定するプロパティ
+    align-items: center;
+    // position:relativeで決めた基準位置をabsoluteで0にする
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    // 左上が基準になっているのでwrapの箱大きさの５０％ずつずらすと真ん中に来る
+    transform:translate(-50%,-50%);
+    // テキストをセンター寄せ
+    text-align: center;
+
+    @include sp{
+        height: 50%;
+        top: 65%;
+    }
+}
+
+.catch {
+    color: #fff;
+    font-size: 27px;
+    font-weight: bold;
+
+    &::after{
+        display: block;
+        width: 9.7rem;
+        // 中の""忘れないように！
+        content: "" ;
+        border-top: 1px solid #fff;   
+        margin: 20px auto 0;
+        // margin-top: 20px;
+        // margin-left: auto;
+        // margin-right: auto;
+        // margin-bottom: 0;
+    }
+}
+
+.fv-btn{
+    width: 200px;
+    height: 50px;
+    // linear-gradientでグラデーション右へ$skyから$navyへ
+    background: linear-gradient(to right,$sky,$navy) ;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 5px black;
+
+    .btn-icon{
+        margin-right: 5px;
+    }
+}
+

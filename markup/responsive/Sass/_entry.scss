@@ -1,0 +1,36 @@
+#entry{
+    height: 477px;
+    width: 100%;
+    position: relative;
+}
+
+.entry-wrap{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    text-align: center;
+    width: 320px;
+    height: 127px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    @include sp{
+        width: 90%;
+    }
+}
+
+.entry-btn{
+    // @extend .fv-btnでfv-btnのファイルを引き継ぐ
+    @extend .fv-btn;
+    width: 100%;
+}
+
+.entry-copy{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+

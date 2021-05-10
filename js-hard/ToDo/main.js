@@ -9,14 +9,15 @@ const todo = document.getElementById('todo');
 // 追加ボタンの処理
 addBtn.addEventListener('click',() => {
     // 空欄アラート
-    if (text.value.length < 1) {
+    console.log(text.value.trim());
+    if (text.value.trim().length < 1) {
         alert('空欄はダメです');
     // 一文字以上の時の処理
     } else {
         //<li>を作成
         const liElement = document.createElement('li');
         // <li>要素の本文をテキストに入力された本文にする。
-        liElement.textContent = text.value;
+        liElement.textContent = text.value.trim();
         // 確認ボタン作成
         const checkBtn = document.createElement('input');
         checkBtn.type = 'button';
@@ -34,3 +35,4 @@ addBtn.addEventListener('click',() => {
     text.value = "";
 });
 
+// 半角スペースが入っちゃう

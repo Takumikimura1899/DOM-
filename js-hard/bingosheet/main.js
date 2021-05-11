@@ -11,8 +11,6 @@ console.table(bingo);
 console.log(bingo[3][2]);
 console.log(bingo.join("\n"));
 
-const view = document.getElementById("view");
-
 const verticalArray = ["B", "I", "N", "G", "O"];
 
 console.log(verticalArray);
@@ -54,7 +52,7 @@ function shuffleArray(sourceArr) {
 }
 
 let shuffleBingo = [
-  ["B", "I", "N", "G", "O"],
+  //   ["B", "I", "N", "G", "O"],
   [
     shuffledFirstArray[0],
     shuffledSecondArray[0],
@@ -93,3 +91,44 @@ let shuffleBingo = [
 ];
 
 console.table(shuffleBingo);
+
+const view = document.getElementById("view");
+
+// let fragment = document.createDocumentFragment();
+// shuffleBingo.forEach(function () {
+//   let td = document.createElement("td");
+//   fragment.appendChild(td);
+//   td.innerHTML = shuffleBingo;
+// });
+// view.appendChild(fragment);
+
+// // table要素を生成
+// let table = document.createElement("table");
+// // tr部分のループ
+// for (let i = 0; i < 6; i++) {
+//   // tr要素を生成
+//   let tr = document.createElement("tr");
+//   // th・td部分のループ
+//   for (let j = 0; j < 6; j++) {
+//     // 1行目のtr要素の時
+//     if (i === 0) {
+//       // th要素を生成
+//       let th = document.createElement("th");
+//       // th要素内にテキストを追加
+//       th.textContent = i + "-" + j;
+//       // th要素をtr要素の子要素に追加
+//       tr.appendChild(th);
+//     } else {
+//       // td要素を生成
+//       let td = document.createElement("td");
+//       // td要素内にテキストを追加
+//       td.textContent = i + "-" + j;
+//       // td要素をtr要素の子要素に追加
+//       tr.appendChild(td);
+//     }
+//   }
+//   // tr要素をtable要素の子要素に追加
+//   table.appendChild(tr);
+// }
+// // 生成したtable要素を追加する
+// document.getElementById("view").appendChild(table);

@@ -132,6 +132,9 @@ const shufflednumArray = shuffleArray(numArray);
 console.log(numArray);
 console.log(shufflednumArray);
 
+let td = document.getElementById("FREE");
+td.classList.add("hit-num");
+
 let count = -1;
 hitNum.addEventListener("click", () => {
   count++;

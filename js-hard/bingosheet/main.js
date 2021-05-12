@@ -11,34 +11,22 @@ console.table(bingo);
 console.log(bingo[3][2]);
 console.log(bingo.join("\n"));
 
-const verticalArray = ["B", "I", "N", "G", "O"];
+const titleArray = ["B", "I", "N", "G", "O"];
 
-console.log(verticalArray);
+let array1 = [...Array(15)].map((_, i) => i + 1);
+const shuffledArray1 = shuffleArray(array1);
 
-let firstArray = [...Array(15)].map((_, i) => i + 1);
-const shuffledFirstArray = shuffleArray(firstArray);
-console.log(firstArray);
-console.log(shuffledFirstArray);
+let array2 = [...Array(15)].map((_, i) => i + 16);
+const shuffledArray2 = shuffleArray(array2);
 
-let secondArray = [...Array(15)].map((_, i) => i + 16);
-const shuffledSecondArray = shuffleArray(secondArray);
-console.log(secondArray);
-console.log(shuffledSecondArray);
+let array3 = [...Array(15)].map((_, i) => i + 31);
+const shuffledArray3 = shuffleArray(array3);
 
-let thirdArray = [...Array(15)].map((_, i) => i + 31);
-const shuffledThirdArray = shuffleArray(thirdArray);
-console.log(thirdArray);
-console.log(shuffledThirdArray);
+let array4 = [...Array(15)].map((_, i) => i + 46);
+const shuffledArray4 = shuffleArray(array4);
 
-let fourthArray = [...Array(15)].map((_, i) => i + 46);
-const shuffledFourthArray = shuffleArray(fourthArray);
-console.log(fourthArray);
-console.log(shuffledFourthArray);
-
-let fifthArray = [...Array(15)].map((_, i) => i + 61);
-const shuffledFifthArray = shuffleArray(fifthArray);
-console.log(fifthArray);
-console.log(shuffledFifthArray);
+let array5 = [...Array(15)].map((_, i) => i + 61);
+const shuffledArray5 = shuffleArray(array5);
 
 function shuffleArray(sourceArr) {
   const array = sourceArr.concat();
@@ -51,46 +39,46 @@ function shuffleArray(sourceArr) {
   return array;
 }
 
-let shuffleBingo = [
+let bingosheet = [
   ["B", "I", "N", "G", "O"],
   [
-    shuffledFirstArray[0],
-    shuffledFirstArray[1],
-    shuffledFirstArray[2],
-    shuffledFirstArray[3],
-    shuffledFirstArray[4],
+    shuffledArray1[0],
+    shuffledArray1[1],
+    shuffledArray1[2],
+    shuffledArray1[3],
+    shuffledArray1[4],
   ],
   [
-    shuffledSecondArray[0],
-    shuffledSecondArray[1],
-    shuffledSecondArray[2],
-    shuffledSecondArray[3],
-    shuffledSecondArray[4],
+    shuffledArray2[0],
+    shuffledArray2[1],
+    shuffledArray2[2],
+    shuffledArray2[3],
+    shuffledArray2[4],
   ],
   [
-    shuffledThirdArray[0],
-    shuffledThirdArray[1],
+    shuffledArray3[0],
+    shuffledArray3[1],
     "FREE",
-    shuffledThirdArray[2],
-    shuffledThirdArray[3],
+    shuffledArray3[2],
+    shuffledArray3[3],
   ],
   [
-    shuffledFourthArray[0],
-    shuffledFourthArray[1],
-    shuffledFourthArray[2],
-    shuffledFourthArray[3],
-    shuffledFourthArray[4],
+    shuffledArray4[0],
+    shuffledArray4[1],
+    shuffledArray4[2],
+    shuffledArray4[3],
+    shuffledArray4[4],
   ],
   [
-    shuffledFifthArray[0],
-    shuffledFifthArray[1],
-    shuffledFifthArray[2],
-    shuffledFifthArray[3],
-    shuffledFifthArray[4],
+    shuffledArray5[0],
+    shuffledArray5[1],
+    shuffledArray5[2],
+    shuffledArray5[3],
+    shuffledArray5[4],
   ],
 ];
 
-console.table(shuffleBingo);
+console.table(bingosheet);
 
 const view = document.getElementById("view");
 
@@ -115,14 +103,15 @@ for (let i = 0; i < 6; i++) {
       // th要素を生成
       let th = document.createElement("th");
       // th要素内にテキストを追加
-      th.textContent = shuffleBingo[0][j];
+      th.textContent = bingosheet[0][j];
       // th要素をtr要素の子要素に追加
       tr.appendChild(th);
     } else {
       // td要素を生成
       let td = document.createElement("td");
+      td.setAttribute("id", bingosheet[j + 1][i - 1]);
       // td要素内にテキストを追加
-      td.textContent = shuffleBingo[j + 1][i - 1];
+      td.textContent = bingosheet[j + 1][i - 1];
       // td要素をtr要素の子要素に追加
       tr.appendChild(td);
     }
@@ -133,7 +122,26 @@ for (let i = 0; i < 6; i++) {
 // 生成したtable要素を追加する
 document.getElementById("view").appendChild(table);
 
+// ~~~ここからチャレンジ~~~
+
 const hitNum = document.getElementById("hitNum");
+const result = [];
+
+let numArray = [...Array(75)].map((_, i) => i + 1);
+const shufflednumArray = shuffleArray(numArray);
+console.log(numArray);
+console.log(shufflednumArray);
+
+let count = -1;
 hitNum.addEventListener("click", () => {
-  window.location.reload();
+  count++;
+  alert("数字は" + shufflednumArray[count] + "番です");
+  result.push(shufflednumArray[count]);
+  console.log(shufflednumArray[count]);
+  let num = shufflednumArray[count];
+  console.log(num);
+  let td = document.getElementById(num);
+  if (td == null) return;
+  td.classList.add("hit-num");
+  console.log(result);
 });
